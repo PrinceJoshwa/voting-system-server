@@ -5,6 +5,7 @@ import morgan from "morgan"
 import connectDB from "./config/db.js"
 import userRoutes from "./routes/userRoutes.js"
 import voteRoutes from "./routes/voteRoutes.js"
+import candidateRoutes from "./routes/candidateRoutes.js"
 
 dotenv.config()
 
@@ -28,6 +29,7 @@ app.use(morgan("dev"))
 // API routes
 app.use("/api/users", userRoutes)
 app.use("/api/votes", voteRoutes)
+app.use("/api/candidates", candidateRoutes)
 
 // Health check endpoint
 app.get("/health", (req, res) => {
